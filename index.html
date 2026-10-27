@@ -970,21 +970,217 @@
           .story-caption { margin-top:42px; }
         }
         @media(max-width:420px) { .story-gallery {gap:9px;padding:0 14px;} .story-photo:nth-child(1){grid-column:1/span 7;} .story-photo:nth-child(2){grid-column:9/span 4;} }
+    
+        /* 2026 editorial glass refinement */
+        :root { --glass-stroke: rgba(255,255,255,.78); --glass-shadow: 0 22px 60px rgba(89,67,49,.10); }
+        body { background: #f9f7f4; }
+        header { background: radial-gradient(ellipse at 22% 18%,rgba(231,214,195,.62),transparent 42%), radial-gradient(ellipse at 83% 75%,rgba(223,207,193,.48),transparent 45%), #faf9f7; isolation:isolate; }
+        header::before { content:''; position:absolute; inset:18px; border:1px solid rgba(184,150,120,.23); border-radius: 4px; pointer-events:none; }
+        header::after { content:'S  &  A'; position:absolute; bottom:26px; right:clamp(25px,6vw,90px); color:rgba(184,150,120,.23); font:italic 1.4rem var(--serif-italic); letter-spacing:.22em; pointer-events:none; }
+        .hero-names { text-shadow: 0 12px 36px rgba(100,74,54,.09); }
+        .photo-story { position:relative; background:radial-gradient(ellipse at 0% 15%,#e9dfd5 0%,transparent 36%),radial-gradient(ellipse at 100% 75%,#e7ded5 0%,transparent 36%),#f7f3ef; }
+        .photo-story::before { content:'12 · 12 · 2026'; position:absolute; left:50%; top:38px; transform:translateX(-50%); font-size:.68rem; letter-spacing:.4em; color:rgba(132,103,80,.6); white-space:nowrap; }
+        .photo-story .story-kicker { margin-top:10px; }
+        .story-gallery { position:relative; padding:28px; border:1px solid rgba(255,255,255,.75); border-radius:26px; background:rgba(255,255,255,.23); box-shadow:0 28px 90px rgba(94,71,54,.08),inset 0 1px rgba(255,255,255,.7); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+        .story-photo { border:7px solid rgba(255,255,255,.88); border-bottom-width:13px; border-radius:3px; box-shadow:0 15px 42px rgba(51,39,32,.19),0 2px 6px rgba(51,39,32,.08); }
+        .story-photo img { filter:grayscale(1) contrast(1.035); }
+        .story-photo::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(145deg,rgba(255,255,255,.13),transparent 36%); }
+        .timeline { background:linear-gradient(160deg,#faf9f7,#f2ece5 52%,#faf9f7); }
+        .timeline-content,.venue-card,.calendar,.contact-item,.rsvp-wrapper { background:rgba(255,255,255,.67); border:1px solid var(--glass-stroke); box-shadow:var(--glass-shadow),inset 0 1px rgba(255,255,255,.85); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+        .timeline-content { border-radius:20px; }
+        .venues { background:radial-gradient(circle at 15% 35%,rgba(232,212,193,.65),transparent 40%),linear-gradient(135deg,#f7f3ef,#ede5dd); }
+        .calendar-section { background:radial-gradient(ellipse at 85% 50%,#eee4d9,transparent 55%),#faf9f7; }
+        .rsvp { background:radial-gradient(ellipse at 12% 10%,#e8ddd1,transparent 50%),linear-gradient(180deg,#faf9f7,#f2eae2); }
+        .venue-card,.contact-item,.calendar { transition:transform .4s ease,box-shadow .4s ease,background .4s ease; }
+        .venue-card:hover,.contact-item:hover { background:rgba(255,255,255,.84); transform:translateY(-5px); box-shadow:0 26px 65px rgba(89,67,49,.14); }
+        .section-title { letter-spacing:.13em; }
+        .section-subtitle { opacity:.88; }
+        .envelope-card { background:rgba(255,255,255,.84); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(255,255,255,.9); }
+        .invitation-overlay { background:radial-gradient(circle at 20% 25%,#e7d8c9,transparent 42%),radial-gradient(circle at 90% 80%,#e4d5c5,transparent 43%),#f6f0e9; }
+        @media(max-width:768px) { .story-gallery {padding:13px; border-radius:18px;} .story-photo {border-width:4px;border-bottom-width:8px;} header::before {inset:12px;} .photo-story::before {top:24px;} }
+        @media(prefers-reduced-transparency:reduce) { .story-gallery,.timeline-content,.venue-card,.calendar,.contact-item,.rsvp-wrapper,.envelope-card {backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff;} }
+
+
+/* PREMIUM FINISH — understated translucent editorial design */
+:root { --champagne:#b89576; --ink:#302b29; }
+header { overflow:hidden; }
+header .header-tag { border:1px solid rgba(184,150,120,.34); background:rgba(255,255,255,.44); padding:9px 20px; border-radius:30px; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); font-size:.7rem; letter-spacing:.4em; }
+header .hero-date-block { background:rgba(255,255,255,.43); border:1px solid rgba(255,255,255,.76); padding:24px clamp(25px,5vw,58px); border-radius:24px; box-shadow:0 24px 65px rgba(95,74,56,.07),inset 0 1px rgba(255,255,255,.85); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+header .hero-names { position:relative; z-index:1; }
+.photo-story { isolation:isolate; }
+.photo-story::after { content:'S&A'; position:absolute; right:-.03em; top:10%; font:italic clamp(8rem,23vw,24rem)/1 var(--serif-italic); color:rgba(184,150,120,.065); z-index:-1; pointer-events:none; }
+.story-gallery { overflow:visible; }
+.story-photo { transition: translate .5s ease,box-shadow .5s ease,rotate .5s ease; }
+.story-photo:nth-child(1) {transform:none;rotate:-2deg;}
+.story-photo:nth-child(2) {transform:none;rotate:2deg;}
+.story-photo:nth-child(3) {transform:none;rotate:1.5deg;}
+.story-photo:nth-child(4) {transform:none;rotate:-1.5deg;}
+.story-photo:nth-child(5) {transform:none;rotate:.7deg;}
+.story-photo.animate-on-scroll { opacity:0; translate:0 26px; }
+.story-photo.animate-on-scroll.visible { opacity:1; translate:0 0; }
+.story-photo:hover { translate:0 -8px; rotate:0deg; box-shadow:0 26px 60px rgba(51,39,32,.21); z-index:2; }
+.story-photo:nth-child(2) {transition-delay:.08s;}
+.story-photo:nth-child(3) {transition-delay:.12s;}
+.story-photo:nth-child(4) {transition-delay:.16s;}
+.story-photo:nth-child(5) {transition-delay:.2s;}
+.story-caption { position:relative; }
+.story-caption::before,.story-caption::after {content:''; display:inline-block; width:clamp(22px,8vw,110px); height:1px; background:linear-gradient(90deg,transparent,rgba(184,150,120,.5)); vertical-align:middle; margin:0 18px 10px;}
+.story-caption::after {transform:rotate(180deg);}
+.timeline-content,.venue-card,.calendar,.contact-item,.rsvp-wrapper { border-color:rgba(255,255,255,.9); box-shadow:0 16px 52px rgba(80,59,42,.075),inset 0 1px rgba(255,255,255,.95); }
+.timeline-content { position:relative; overflow:hidden; }
+.timeline-content::before { content:''; position:absolute; inset:0 auto 0 0; width:2px; background:linear-gradient(180deg,transparent,rgba(184,150,120,.52),transparent); }
+.venue-link,.btn-calendar { background:rgba(255,255,255,.35); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.envelope-card { box-shadow:0 35px 95px rgba(110,80,58,.16),inset 0 1px rgba(255,255,255,.9); }
+@media(max-width:768px) { header .hero-date-block {padding:20px 23px;border-radius:18px;} .story-caption::before,.story-caption::after {width:25px;margin:0 8px 7px;} .story-gallery {overflow:visible;} .story-photo:hover {translate:0 0;} }
+@media(prefers-reduced-motion:reduce) { .story-photo.animate-on-scroll {opacity:1;translate:none;} .story-photo {transition:none;} }
+@media(prefers-reduced-transparency:reduce) {header .hero-date-block,header .header-tag {background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;} }
+
+
+        /* Реалистичное раскрытие свадебного конверта */
+        .invitation-overlay { background: radial-gradient(ellipse at 50% 38%, #fffdf9, #ede5dc 85%); perspective:1200px; }
+        .envelope-scene { width:min(92vw,530px); display:flex; flex-direction:column; align-items:center; position:relative; text-align:center; }
+        .envelope-heading { font-family:var(--sans); font-size:clamp(.58rem,1.8vw,.75rem); letter-spacing:.34em; color:#a98d75; margin-bottom:35px; }
+        .envelope-stage { width:min(85vw,440px); height:305px; position:relative; perspective:1000px; filter:drop-shadow(0 25px 24px rgba(88,64,45,.17)); transform:translateZ(0); }
+        .envelope-back { position:absolute; left:0; right:0; bottom:0; height:255px; background:#ded0be; border-radius:5px; box-shadow:inset 0 0 35px #c9b9a5; }
+        .envelope-letter { position:absolute; left:8%; width:84%; bottom:18px; height:260px; background:linear-gradient(145deg,#fffefb,#f8f4ec); border:1px solid #e9dfd0; box-shadow:0 3px 14px rgba(65,45,30,.12); z-index:2; padding:23px 12px; display:flex; flex-direction:column; align-items:center; transition:transform 1.1s cubic-bezier(.2,.8,.2,1), height .9s ease, box-shadow .8s; }
+        .letter-ornament { color:#b89a7e; font-size:17px; line-height:1; }
+        .letter-caption { font:500 9px var(--sans); letter-spacing:.2em; color:#b49b84; margin:11px 0 4px; }
+        .letter-names { font-family:var(--script); font-size:clamp(2rem,6vw,2.8rem); line-height:1.2; color:#46392f; white-space:nowrap; }
+        .letter-names span { font-family:var(--serif-italic); font-size:.65em; }
+        .letter-divider { height:1px; width:50px; background:#cbb49d; margin:8px 0; }
+        .letter-date { font-family:var(--serif-italic); font-size:1.4rem; font-style:italic; color:#92755d; }
+        .letter-message { font-family:var(--serif-italic); font-size:1.1rem; font-style:italic; line-height:1.2; margin-top:8px; color:#78675a; }
+        .envelope-front { position:absolute; left:0; right:0; bottom:0; height:255px; z-index:4; background:linear-gradient(145deg,#f4e8d9,#e2d0bc); clip-path:polygon(0 0,50% 49%,100% 0,100% 100%,0 100%); border-radius:0 0 5px 5px; }
+        .envelope-front::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.5),transparent 58%); clip-path:polygon(0 0,50% 49%,0 100%); }
+        .envelope-flap { position:absolute; left:0; right:0; bottom:0; height:255px; z-index:6; background:linear-gradient(170deg,#ead9c5,#d8c3ab); clip-path:polygon(0 0,100% 0,50% 54%); transform-origin:50% 0; backface-visibility:visible; transition:transform .85s cubic-bezier(.25,.7,.25,1), z-index 0s .42s; }
+        .envelope-seal { position:absolute; z-index:7; left:50%; bottom:125px; transform:translate(-50%,50%); width:53px; height:53px; border-radius:50%; background:radial-gradient(circle at 35% 30%,#d3ad88,#a07857 80%); border:2px solid #e4c6a6; box-shadow:0 3px 9px #8c654b55,inset 0 1px 2px #fff8; display:flex; align-items:center; justify-content:center; font:italic 19px var(--serif-italic); color:white; transition:opacity .3s,transform .5s; }
+        .envelope-seal span {font-size:12px;margin:0 1px;}
+        .envelope-open-button { border:1px solid #b99b80; border-radius:40px; background:#42372f; color:#fff; padding:15px 27px; margin-top:38px; font:500 11px var(--sans); letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:background .25s,opacity .4s,transform .4s; }
+        .envelope-open-button:hover {background:#98775c;}
+        .envelope-open-button span {margin-left:13px;font-size:17px;}
+        .envelope-hint {font:italic 1.1rem var(--serif-italic);color:#a38d79;margin-top:14px;}
+        .invitation-overlay.opening .envelope-flap {transform:rotateX(180deg); z-index:1;}
+        .invitation-overlay.opening .envelope-seal {opacity:0;transform:translate(-50%,50%) scale(.7);}
+        .invitation-overlay.opening .envelope-letter {transform:translateY(-150px);box-shadow:0 16px 35px #6d554133;transition-delay:.6s;}
+        .invitation-overlay.opening .envelope-open-button,.invitation-overlay.opening .envelope-hint {opacity:0;pointer-events:none;transform:translateY(12px);}
+        .invitation-overlay.revealing .envelope-stage {animation:envelope-recede .95s ease-in forwards;}
+        @keyframes envelope-recede {to {opacity:0;transform:translateY(40px) scale(.88);}}
+        @media(max-width:480px) { .envelope-stage {height:270px;} .envelope-back,.envelope-front,.envelope-flap {height:215px;} .envelope-letter {height:225px;padding:14px 8px;} .envelope-seal {bottom:106px;} .letter-message {font-size:.95rem;} .letter-names {font-size:2rem;} .envelope-heading {margin-bottom:28px;} }
+        @media(prefers-reduced-motion:reduce) { .envelope-letter,.envelope-flap,.envelope-seal {transition:none!important;} .invitation-overlay.revealing .envelope-stage {animation:none!important;} }
+
+
+/* === EDITORIAL WEDDING / 2026 REFINEMENT === */
+:root { --ink:#302a28; --rose:#e9d6d1; --sage:#e0e5d9; --champagne:#eee0cb; }
+body { background:#faf8f5; }
+::selection {background:#d7bca6;color:#302a28}
+header { overflow:hidden; background:radial-gradient(ellipse at 12% 20%,#f2e4dc 0%,transparent 44%),radial-gradient(ellipse at 88% 85%,#e7e9df 0%,transparent 46%),#faf8f5; }
+header::before,header::after {content:'';position:absolute;border:1px solid rgba(160,124,97,.22);border-radius:50%;pointer-events:none;animation:ambientFloat 12s ease-in-out infinite alternate;}
+header::before {width:min(65vw,690px);height:min(65vw,690px);top:-330px;right:-270px;}
+header::after {width:350px;height:350px;bottom:-230px;left:-180px;animation-delay:-6s;}
+.hero-names {position:relative;z-index:1;text-shadow:0 8px 28px rgba(114,86,73,.08);}
+.hero-date-block {position:relative;z-index:1;padding:28px 44px;border:1px solid rgba(255,255,255,.88);border-radius:24px;background:rgba(255,255,255,.4);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 22px 70px rgba(94,70,55,.07);}
+.story {background:linear-gradient(145deg,#f1e8e0 0%,#faf8f5 48%,#e9e9df 100%)!important;position:relative;overflow:hidden}
+.story::before {content:'';position:absolute;width:430px;height:430px;border:1px solid rgba(163,129,99,.18);border-radius:50%;left:-250px;top:10%;pointer-events:none}
+.story-photo {box-shadow:0 20px 45px rgba(68,51,43,.16),0 2px 8px rgba(68,51,43,.05)!important;transition:transform .65s cubic-bezier(.2,.8,.2,1),box-shadow .65s ease!important}
+.story-photo:hover {transform:translateY(-12px) rotate(0deg) scale(1.025)!important;box-shadow:0 32px 65px rgba(68,51,43,.22)!important;z-index:5}
+.timeline {background:linear-gradient(160deg,#f7f0e9 0%,#fffaf5 55%,#f4e9e5 100%)}
+.timeline-content {background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 35px rgba(106,78,65,.065)}
+.venues {background:linear-gradient(145deg,#e8e9df,#f6f4ed 50%,#e5e9e2)}
+.venue-card {background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(80,92,74,.08)}
+.venue-card:nth-child(2) {background:rgba(255,249,242,.75)}
+.calendar-section {background:linear-gradient(145deg,#f5e9e4,#fcf8f5 60%,#f2e7e0)}
+.calendar {background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9)}
+.countdown {background:linear-gradient(135deg,#eee0cf,#f8f1e8 50%,#e8ddd2);}
+.countdown-number {font-variant-numeric:tabular-nums}
+.rsvp {background:linear-gradient(145deg,#e8e8e0,#f5f4ef 55%,#e4e8e3)}
+.rsvp-wrapper {background:rgba(255,255,255,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.95)}
+.contacts {background:linear-gradient(145deg,#f7eae4,#fffaf7 50%,#f1e2dd)}
+.contact-item {background:rgba(255,255,255,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85);transition:transform .4s ease,box-shadow .4s ease}
+.contact-item:hover {transform:translateY(-7px);box-shadow:0 18px 44px rgba(110,76,66,.12)}
+.contact-item a {text-decoration-thickness:1px;text-underline-offset:5px}
+footer {background:radial-gradient(ellipse at top,#453832,#241f1e 70%)}
+.section-title {letter-spacing:.12em}
+.section-subtitle {opacity:.95}
+.venue-link,.btn-calendar,.open-btn,.envelope-open-button {transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
+.venue-link:hover,.btn-calendar:hover,.envelope-open-button:hover {transform:translateY(-3px)}
+.animate-on-scroll {transition-duration:1.05s;transition-timing-function:cubic-bezier(.18,.8,.25,1)}
+@keyframes ambientFloat {to{transform:translate(35px,28px) rotate(12deg)}}
+/* A subtle scroll progress line, never covering page content */
+.wedding-progress {position:fixed;top:0;left:0;height:2px;width:0;z-index:10002;background:linear-gradient(90deg,#b88f73,#d5b6a8,#a5ae96);pointer-events:none;transition:width .1s linear}
+@media(max-width:768px){.hero-date-block{padding:23px 18px;border-radius:18px}.story-photo:hover{transform:none!important}.section-title{letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){header::before,header::after{animation:none!important}.wedding-progress{transition:none}}
+
+
+/* Cinematic invitation cover — enhanced first impression */
+.invitation-overlay {
+  isolation:isolate; overflow:hidden;
+  background:radial-gradient(ellipse at 50% 38%,rgba(255,252,245,.96) 0%,rgba(247,237,224,.94) 43%,#d8c4b1 100%);
+}
+.invitation-overlay::before {content:"";position:absolute;inset:17px;border:1px solid rgba(145,106,78,.29);pointer-events:none;z-index:0;}
+.invitation-overlay::after {content:"";position:absolute;inset:27px;border:1px solid rgba(255,255,255,.5);pointer-events:none;z-index:0;}
+.intro-monogram {position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);font:italic clamp(12rem,34vw,34rem)/1 var(--serif-italic);color:rgba(150,113,87,.075);white-space:nowrap;pointer-events:none;user-select:none;z-index:0;}
+.intro-halo {position:absolute;width:min(90vw,740px);aspect-ratio:1;border:1px solid rgba(171,137,110,.19);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.intro-halo::before,.intro-halo::after {content:"";position:absolute;border-radius:50%;inset:24px;border:1px solid rgba(171,137,110,.13)}
+.intro-halo::after {inset:65px;border-style:dashed;opacity:.55}
+.intro-corner {position:absolute;font:italic 2rem var(--serif-italic);color:#a98b70;opacity:.75;z-index:1;pointer-events:none}
+.intro-corner.a {top:35px;left:40px}.intro-corner.b {top:35px;right:40px}.intro-corner.c {bottom:35px;left:40px}.intro-corner.d {bottom:35px;right:40px}
+.intro-topline {font:500 10px var(--sans);letter-spacing:.36em;text-transform:uppercase;color:#98765c;margin-bottom:14px;}
+.envelope-scene {z-index:2; width:min(94vw,600px);animation:intro-arrive 1.2s cubic-bezier(.2,.8,.2,1) both;}
+.envelope-heading {font:italic clamp(2.4rem,6vw,4.1rem)/1.12 var(--serif-italic);letter-spacing:.01em;color:#493a31;margin:0 0 38px;text-transform:none;}
+.envelope-stage {filter:drop-shadow(0 33px 26px rgba(76,48,30,.24));transition:filter .6s ease,transform .6s ease;animation:envelope-float 5s ease-in-out infinite;cursor:pointer;}
+.envelope-stage:hover {filter:drop-shadow(0 42px 32px rgba(76,48,30,.3));}
+.envelope-front {background:linear-gradient(125deg,#f5e9d9 0%,#e2cbb1 55%,#d4b99d 100%);}
+.envelope-back {background:linear-gradient(155deg,#f3e5d3,#d2b69b);}
+.envelope-flap {background:linear-gradient(165deg,#f6e9d9,#ddc2a6);}
+.envelope-seal {width:62px;height:62px;bottom:125px;background:radial-gradient(circle at 30% 25%,#e1bd93,#b6875f 52%,#885b40 100%);border:2px solid #e8cba9;box-shadow:0 7px 17px #80563766,inset 0 2px 4px #fff7;}
+.envelope-open-button {margin-top:42px;padding:18px 35px;background:linear-gradient(135deg,#493b32,#2c2623);box-shadow:0 13px 28px rgba(67,47,36,.24);border:1px solid #7d6554;letter-spacing:.19em;}
+.envelope-open-button:hover {background:linear-gradient(135deg,#98745b,#654e3e);box-shadow:0 18px 32px rgba(67,47,36,.28);}
+.envelope-hint {margin-top:16px;color:#967b68;}
+.intro-bottom {position:absolute;bottom:59px;left:0;width:100%;text-align:center;font:500 10px var(--sans);letter-spacing:.3em;color:#8c715c;pointer-events:none;z-index:1;}
+.intro-spark {position:absolute;z-index:1;color:#b38e6b;opacity:.48;pointer-events:none;animation:spark-drift 8s ease-in-out infinite alternate;font-size:20px;}
+.intro-spark.s1{top:23%;left:16%}.intro-spark.s2{top:30%;right:16%;animation-delay:-3s;font-size:12px}.intro-spark.s3{bottom:26%;left:22%;animation-delay:-5s;font-size:12px}.intro-spark.s4{bottom:23%;right:21%;animation-delay:-2s}
+.invitation-overlay.opening .envelope-stage {animation:none;}
+.invitation-overlay.opening .intro-topline,.invitation-overlay.opening .envelope-heading {transition:opacity .7s;opacity:.25;}
+@keyframes intro-arrive {from{opacity:0;transform:translateY(35px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes envelope-float {0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes spark-drift {to{transform:translate(15px,-22px) rotate(25deg);opacity:.22}}
+@media(max-width:600px){.invitation-overlay::before{inset:10px}.invitation-overlay::after{inset:17px}.intro-corner.a,.intro-corner.b{top:22px}.intro-corner.c,.intro-corner.d{bottom:22px}.intro-corner.a,.intro-corner.c{left:25px}.intro-corner.b,.intro-corner.d{right:25px}.envelope-heading{margin-bottom:27px;font-size:clamp(2.4rem,10vw,3.4rem)}.intro-topline{font-size:8px;letter-spacing:.23em}.intro-bottom{bottom:43px;font-size:8px}.envelope-open-button{margin-top:26px}.intro-spark.s1{left:8%}.intro-spark.s2{right:8%}}
+@media(max-height:720px){.intro-bottom{bottom:30px}.envelope-heading{margin-bottom:15px}.envelope-open-button{margin-top:17px}.envelope-scene{transform:scale(.88)}}
+@media(prefers-reduced-motion:reduce){.envelope-scene,.envelope-stage,.intro-spark{animation:none!important}}
+
     </style>
 </head>
 <body>
+    <div class="wedding-progress" id="weddingProgress" aria-hidden="true"></div>
 
-    <!-- КОНВЕРТ -->
+    <!-- АНИМИРОВАННЫЙ КОНВЕРТ -->
     <div class="invitation-overlay" id="invitationOverlay">
-        <div class="envelope-card" id="envelopeCard">
-            <div class="wax-seal">С&amp;А</div>
-            <h1>Приглашение</h1>
-            <div class="subtitle">на нашу свадьбу</div>
-            <div class="names">Сергей &amp; Аделия</div>
-            <div class="date-badge">12 · 12 · 2026</div>
-            <button class="open-btn" id="openBtn" type="button">Открыть</button>
-            <div class="open-hint">нажмите, чтобы развернуть приглашение</div>
+      <div class="intro-halo" aria-hidden="true"></div>
+      <div class="intro-monogram" aria-hidden="true">С &amp; А</div>
+      <span class="intro-corner a" aria-hidden="true">✧</span><span class="intro-corner b" aria-hidden="true">✧</span>
+      <span class="intro-corner c" aria-hidden="true">✧</span><span class="intro-corner d" aria-hidden="true">✧</span>
+      <span class="intro-spark s1" aria-hidden="true">✦</span><span class="intro-spark s2" aria-hidden="true">✧</span><span class="intro-spark s3" aria-hidden="true">✦</span><span class="intro-spark s4" aria-hidden="true">✧</span>
+      <div class="envelope-scene" id="envelopeCard">
+        <div class="intro-topline">12 декабря 2026 · Москва</div>
+        <div class="envelope-heading">Особенный день начинается здесь</div>
+        <div class="envelope-stage">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter">
+            <div class="letter-ornament">✦</div>
+            <div class="letter-caption">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+            <div class="letter-names">Сергей <span>&amp;</span> Аделия</div>
+            <div class="letter-divider"></div>
+            <div class="letter-date">12 декабря 2026</div>
+            <div class="letter-message">Будем счастливы разделить<br>этот день вместе с вами</div>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-seal">С<span>&amp;</span>А</div>
         </div>
+        <button class="envelope-open-button" id="openBtn" type="button">Открыть приглашение <span aria-hidden="true">↗</span></button>
+        <div class="envelope-hint">Нажмите, чтобы открыть конверт</div>
+      </div>
+      <div class="intro-bottom">СЕРГЕЙ &amp; АДЕЛИЯ · НАША ИСТОРИЯ</div>
     </div>
 
     <!-- HERO -->
@@ -1232,11 +1428,11 @@
             <div class="contacts-grid">
                 <div class="contact-item animate-on-scroll">
                     <h3>Аделия</h3>
-                    <p><a href="tel:+79167778877">+7 (916) 777-88-77</a></p>
+                    <p><a href="tel:+79196462252">+7 (919) 646-22-52</a></p>
                 </div>
                 <div class="contact-item animate-on-scroll">
                     <h3>Сергей</h3>
-                    <p><a href="tel:+79268887788">+7 (926) 888-77-88</a></p>
+                    <p><a href="tel:+79854504093">+7 (985) 450-40-93</a></p>
                 </div>
             </div>
         </div>
@@ -1259,16 +1455,18 @@
         function openInvitation() {
             if (isOpened) return;
             isOpened = true;
-            overlay.classList.add('hidden');
+            openBtn.disabled = true;
+            overlay.classList.add('opening');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            setTimeout(() => overlay.classList.add('revealing'), reducedMotion ? 0 : 2050);
             setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 800);
+                overlay.classList.add('hidden');
+                setTimeout(() => { overlay.style.display = 'none'; }, reducedMotion ? 0 : 850);
+            }, reducedMotion ? 80 : 2850);
         }
 
         openBtn.addEventListener('click', openInvitation);
-        envelopeCard.addEventListener('click', (e) => {
-            if (e.target !== openBtn) openInvitation();
-        });
+        document.querySelector('.envelope-stage').addEventListener('click', openInvitation);
 
         const weddingDate = new Date('2026-12-12T12:20:00').getTime();
         const cdDays = document.getElementById('days');
@@ -1336,6 +1534,19 @@
         } else {
             document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('visible'));
         }
+
+        // Lightweight, passive scroll progress indicator.
+        const weddingProgress = document.getElementById('weddingProgress');
+        let scrollTicking = false;
+        window.addEventListener('scroll', () => {
+            if (scrollTicking) return;
+            scrollTicking = true;
+            requestAnimationFrame(() => {
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                weddingProgress.style.width = (maxScroll > 0 ? Math.min(100, Math.max(0, window.scrollY / maxScroll * 100)) : 0) + '%';
+                scrollTicking = false;
+            });
+        }, { passive: true });
     </script>
 </body>
 </html>
